@@ -6,8 +6,16 @@ import {
   getBills,
   updateBill,
   finishedBill,
-  removeBill,
+  removeBill
 } from "./controller/BillController";
+import {
+  getUser,
+  saveUser,
+  getUsers,
+  updateUser,
+  activatedUser,
+  removeUser
+} from "./controller/UsersController";
 
 const routes = Router();
 
@@ -21,5 +29,13 @@ routes.post("/bills", saveBill);
 routes.put("/bills/:id", updateBill);
 routes.patch("/bills/:id", finishedBill);
 routes.delete("/bills/:id", removeBill);
+
+routes.get("/users", getUsers);
+routes.get("/users/:id", getUser);
+routes.post("/users", saveUser);
+routes.put("/users/:id", updateUser);
+routes.patch("/users/:id", activatedUser);
+routes.delete("/users/:id", removeUser);
+
 
 export default routes;
